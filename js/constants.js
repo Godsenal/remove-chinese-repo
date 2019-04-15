@@ -6,7 +6,7 @@ const queryForPath = {
 const discoverWrapper = "[class*=discover-repositories]";
 
 const defaultTitle = "h1, h2, h3";
-const defaultDescription = "[itemprop=description], p, .text-gray";
+const defaultDescription = "[itemprop=description], p.text-gray";
 const currentPath = window.location.pathname;
 const runtime = chrome.runtime;
 

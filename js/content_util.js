@@ -10,7 +10,9 @@ function removeChineseFromList(list) {
     });
     if (hasChinese) {
       removed.add(el);
-      el.className = `remove-chinese-invisible ${el.className.split(" ")}`;
+      el.className = `remove-chinese-invisible ${
+        el.className ? el.className.split(" ") : ""
+      }`;
     }
   });
 }

@@ -17,9 +17,11 @@
     const prevInit = init;
     init = function() {
       prevInit();
-      const target = document.querySelector(
-        "[class*=discover-repositories]:last-child"
+      // get last target in nested DOM
+      const targets = document.querySelectorAll(
+        "[class*=discover-repositories]"
       );
+      const target = targets[targets.length - 1];
       if (target) {
         observer = new MutationObserver(handlePagenation);
         observer.observe(target, option);
