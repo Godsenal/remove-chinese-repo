@@ -14,10 +14,23 @@
   }
   // discover page의 load pagination은 document load가 되지 않으므로 mutation observer를 통해 관리해준다.
   if (currentPath === "/discover") {
-    const target = document.querySelector("[class*=discover-repositories]");
-    if (target) {
-      observer = new MutationObserver(handlePagenation);
-      observer.observe(target, option);
-    }
+    const prevInit = init;
+    init = function() {
+      prevInit();
+      const target = document.querySelector(
+        "[class*=discover-repositories]:last-child"
+      );
+      if (target) {
+        observer = new MutationObserver(handlePagenation);
+        observer.observe(target, option);
+
+        // observer가 등록된 경우 init과 recover를 wrapping.
+        const prevRecover = recover;
+        recover = function() {
+          observer.disconnect();
+          prevRecover();
+        };
+      }
+    };
   }
 })();

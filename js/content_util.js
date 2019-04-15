@@ -1,8 +1,6 @@
-(function() {
-  const elList = document.querySelectorAll(queryForPath[currentPath]);
-  removeChineseFromList(elList);
-})();
-
+const checkChinese = str => {
+  return str.match(/[\u3400-\u9FBF]/);
+};
 function removeChineseFromList(list) {
   list.forEach(el => {
     const title = el.querySelector(defaultTitle);
@@ -11,6 +9,7 @@ function removeChineseFromList(list) {
       return item && checkChinese(item.innerHTML);
     });
     if (hasChinese) {
+      removed.add(el);
       el.className = `remove-chinese-invisible ${el.className.split(" ")}`;
     }
   });
