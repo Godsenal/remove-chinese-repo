@@ -1,6 +1,6 @@
 {
   "name": "Remove chinese repo",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Remove chinese repo from github explore, trending and discover. No hard feelings.",
   "manifest_version": 2,
   "author": "godsenal",
