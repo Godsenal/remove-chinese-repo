@@ -23,9 +23,8 @@
       ],
       "js": [
         "js/constants.js",
-        "js/content_util.js",
+        "js/content_model.js",
         "js/content_main.js",
-        "js/content_discover.js",
         "js/content_message.js",
         "js/content_sync.js"
       ],
