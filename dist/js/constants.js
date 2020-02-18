@@ -1,7 +1,7 @@
 const queryForPath = {
-  "/explore": "article.Story",
+  "/explore": "article.Box-row",
   "/discover": "[class*=repository-recommendation-and-restore]",
-  "/trending": "ol.repo-list li"
+  "/trending": "article.Box-row"
 };
 const discoverWrapper = "[class*=discover-repositories]";
 
@@ -10,6 +10,6 @@ const runtime = chrome.runtime;
 
 const defaultTitle = "h1, h2, h3";
 const defaultDescription =
-  currentPath === "/discover" ? "[itemprop=description]" : ".text-gray";
+  currentPath === "/discover" ? "[itemprop=description]" : "p";
 
 const removed = new Set(); // save removed chinese repo for recover
