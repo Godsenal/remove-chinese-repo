@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/css/popup.css" />
+    <link rel="stylesheet" href="./index.css" />
     <title>Document</title>
   </head>
   <body>
     <h1 id="currentPath"></h1>
     <h2 id="description"></h2>
-    <label class="switch">
-      <input id="toggle" type="checkbox" />
-      <span class="slider round"></span>
-    </label>
-    <script src="/js/popup.js"></script>
+    <h2 id="removeCount">삭제된 레포 수: <span id="count">0</span></h2>
+    <div>
+      <label class="switch">
+        <input id="toggle" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <script src="./index.js"></script>
   </body>
 </html>

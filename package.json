@@ -1,0 +1,26 @@
+{
+  "name": "remove-chinese-repo",
+  "version": "1.0.0",
+  "description": "깃헙 Chinese Repo 안보이게 하기",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle:popup": "parcel build src/popup/index.html -d dist/bundle -o popup.html --public-url /bundle",
+    "bundle:content": "parcel build src/content/index.js -d dist/bundle -o content.js",
+    "bundle:background": "parcel build src/background/index.js -d dist/bundle -o background.js",
+    "bundle": "rm -rf dist/bundle & npm run bundle:popup & npm run bundle:content & npm run bundle:background"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godsenal/remove-chinese-repo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Godsenal/remove-chinese-repo/issues"
+  },
+  "homepage": "https://github.com/Godsenal/remove-chinese-repo#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

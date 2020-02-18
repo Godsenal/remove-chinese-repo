@@ -10,6 +10,9 @@ body {
   border-radius: 10px;
   padding: 10px;
 }
+#removeCount {
+  color: coral;
+}
 /* The switch - the box around the slider */
 .switch {
   position: relative;

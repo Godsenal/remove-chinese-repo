@@ -24,5 +24,13 @@ function handleChange(pathname, element) {
       toggle.checked = initialChecked;
       toggle.onchange = handleChange.bind(null, pathname);
     });
+    chrome.runtime.onMessage.addListener(function(request) {
+      if (request.message === "update_count") {
+        document.getElementById("count").innerText = request.count;
+      }
+    });
+
+    // 초기 카운트 요청
+    chrome.tabs.sendMessage(tabs[0].id, { message: "request_count" });
   });
 })();

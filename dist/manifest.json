@@ -1,6 +1,6 @@
 {
   "name": "Remove chinese repo",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Remove chinese repo from github explore, trending and discover. No hard feelings.",
   "manifest_version": 2,
   "author": "godsenal",
@@ -10,7 +10,7 @@
     "128": "icon/icon128.png"
   },
   "background": {
-    "scripts": ["js/background.js"],
+    "scripts": ["bundle/background.js"],
     "persistent": false
   },
   "content_scripts": [
@@ -21,19 +21,12 @@
         "https://github.com/trending*",
         "https://github.com/discover*"
       ],
-      "js": [
-        "js/constants.js",
-        "js/content_util.js",
-        "js/content_main.js",
-        "js/content_discover.js",
-        "js/content_message.js",
-        "js/content_sync.js"
-      ],
+      "js": ["bundle/content.js"],
       "css": ["css/content.css"]
     }
   ],
   "permissions": ["tabs", "storage"],
-  "page_action": {
-    "default_popup": "html/popup.html"
+  "browser_action": {
+    "default_popup": "bundle/popup.html"
   }
 }
