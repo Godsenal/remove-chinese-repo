@@ -1,5 +1,5 @@
 const queryForPath = {
-  "/explore": "article.Box-row",
+  "/explore": "article",
   "/discover": "[class*=repository-recommendation-and-restore]",
   "/trending": "article.Box-row"
 };
